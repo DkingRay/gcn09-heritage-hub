@@ -40,7 +40,7 @@ function Events() {
     const { error } = await supabase.from("event_registrations").insert({
       event_id: eventId,
       user_id: user.id,
-      email: user.email,
+      email: user.email ?? null,
     });
     if (error) {
       toast.error(

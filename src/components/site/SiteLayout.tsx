@@ -21,8 +21,8 @@ export function PageHero({
 }: {
   eyebrow: string;
   title: string;
-  body?: string;
-  children?: ReactNode;
+  body?: string | undefined;
+  children?: ReactNode | undefined;
 }) {
   return (
     <section className="relative overflow-hidden bg-gradient-brand">
