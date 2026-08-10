@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { Reveal } from "@/components/site/Reveal";
 import { CoreValues, FocusAreas, MissionVision } from "@/components/site/Sections";
 import { CREST_URL, ORG } from "@/lib/site";
+import aboutHero from "@/assets/hero-4.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
