@@ -17,12 +17,14 @@ import { Route as EventsRouteImport } from './routes/events'
 import { Route as GalleryRouteImport } from './routes/gallery'
 import { Route as GovernanceRouteImport } from './routes/governance'
 import { Route as ImpactRouteImport } from './routes/impact'
+import { Route as LoginRouteImport } from './routes/login'
 import { Route as NewsRouteImport } from './routes/news'
 import { Route as PrivacyRouteImport } from './routes/privacy'
 import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as SupportRouteImport } from './routes/support'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as VolunteerRouteImport } from './routes/volunteer'
+import { Route as MembershipRegisterRouteImport } from './routes/membership.register'
 import { Route as NewsSlugRouteImport } from './routes/news.$slug'
 import { Route as ProjectsSlugRouteImport } from './routes/projects.$slug'
 
@@ -66,6 +68,11 @@ const ImpactRoute = ImpactRouteImport.update({
   path: '/impact',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LoginRoute = LoginRouteImport.update({
+  id: '/login',
+  path: '/login',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NewsRoute = NewsRouteImport.update({
   id: '/news',
   path: '/news',
@@ -96,6 +103,11 @@ const VolunteerRoute = VolunteerRouteImport.update({
   path: '/volunteer',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MembershipRegisterRoute = MembershipRegisterRouteImport.update({
+  id: '/membership/register',
+  path: '/membership/register',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const NewsSlugRoute = NewsSlugRouteImport.update({
   id: '/$slug',
   path: '/$slug',
@@ -116,12 +128,14 @@ export interface FileRoutesByFullPath {
   '/gallery': typeof GalleryRoute
   '/governance': typeof GovernanceRoute
   '/impact': typeof ImpactRoute
+  '/login': typeof LoginRoute
   '/news': typeof NewsRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/projects': typeof ProjectsRouteWithChildren
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/volunteer': typeof VolunteerRoute
+  '/membership/register': typeof MembershipRegisterRoute
   '/news/$slug': typeof NewsSlugRoute
   '/projects/$slug': typeof ProjectsSlugRoute
 }
@@ -134,12 +148,14 @@ export interface FileRoutesByTo {
   '/gallery': typeof GalleryRoute
   '/governance': typeof GovernanceRoute
   '/impact': typeof ImpactRoute
+  '/login': typeof LoginRoute
   '/news': typeof NewsRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/projects': typeof ProjectsRouteWithChildren
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/volunteer': typeof VolunteerRoute
+  '/membership/register': typeof MembershipRegisterRoute
   '/news/$slug': typeof NewsSlugRoute
   '/projects/$slug': typeof ProjectsSlugRoute
 }
@@ -153,12 +169,14 @@ export interface FileRoutesById {
   '/gallery': typeof GalleryRoute
   '/governance': typeof GovernanceRoute
   '/impact': typeof ImpactRoute
+  '/login': typeof LoginRoute
   '/news': typeof NewsRouteWithChildren
   '/privacy': typeof PrivacyRoute
   '/projects': typeof ProjectsRouteWithChildren
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/volunteer': typeof VolunteerRoute
+  '/membership/register': typeof MembershipRegisterRoute
   '/news/$slug': typeof NewsSlugRoute
   '/projects/$slug': typeof ProjectsSlugRoute
 }
@@ -173,12 +191,14 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/governance'
     | '/impact'
+    | '/login'
     | '/news'
     | '/privacy'
     | '/projects'
     | '/support'
     | '/terms'
     | '/volunteer'
+    | '/membership/register'
     | '/news/$slug'
     | '/projects/$slug'
   fileRoutesByTo: FileRoutesByTo
@@ -191,12 +211,14 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/governance'
     | '/impact'
+    | '/login'
     | '/news'
     | '/privacy'
     | '/projects'
     | '/support'
     | '/terms'
     | '/volunteer'
+    | '/membership/register'
     | '/news/$slug'
     | '/projects/$slug'
   id:
@@ -209,12 +231,14 @@ export interface FileRouteTypes {
     | '/gallery'
     | '/governance'
     | '/impact'
+    | '/login'
     | '/news'
     | '/privacy'
     | '/projects'
     | '/support'
     | '/terms'
     | '/volunteer'
+    | '/membership/register'
     | '/news/$slug'
     | '/projects/$slug'
   fileRoutesById: FileRoutesById
@@ -228,12 +252,14 @@ export interface RootRouteChildren {
   GalleryRoute: typeof GalleryRoute
   GovernanceRoute: typeof GovernanceRoute
   ImpactRoute: typeof ImpactRoute
+  LoginRoute: typeof LoginRoute
   NewsRoute: typeof NewsRouteWithChildren
   PrivacyRoute: typeof PrivacyRoute
   ProjectsRoute: typeof ProjectsRouteWithChildren
   SupportRoute: typeof SupportRoute
   TermsRoute: typeof TermsRoute
   VolunteerRoute: typeof VolunteerRoute
+  MembershipRegisterRoute: typeof MembershipRegisterRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -294,6 +320,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof ImpactRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/login': {
+      id: '/login'
+      path: '/login'
+      fullPath: '/login'
+      preLoaderRoute: typeof LoginRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/news': {
       id: '/news'
       path: '/news'
@@ -334,6 +367,13 @@ declare module '@tanstack/react-router' {
       path: '/volunteer'
       fullPath: '/volunteer'
       preLoaderRoute: typeof VolunteerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/membership/register': {
+      id: '/membership/register'
+      path: '/membership/register'
+      fullPath: '/membership/register'
+      preLoaderRoute: typeof MembershipRegisterRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/news/$slug': {
@@ -384,12 +424,14 @@ const rootRouteChildren: RootRouteChildren = {
   GalleryRoute: GalleryRoute,
   GovernanceRoute: GovernanceRoute,
   ImpactRoute: ImpactRoute,
+  LoginRoute: LoginRoute,
   NewsRoute: NewsRouteWithChildren,
   PrivacyRoute: PrivacyRoute,
   ProjectsRoute: ProjectsRouteWithChildren,
   SupportRoute: SupportRoute,
   TermsRoute: TermsRoute,
   VolunteerRoute: VolunteerRoute,
+  MembershipRegisterRoute: MembershipRegisterRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

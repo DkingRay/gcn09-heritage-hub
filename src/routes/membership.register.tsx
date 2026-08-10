@@ -32,7 +32,42 @@ export const Route = createFileRoute("/membership/register")({
   component: RegisterPage,
 });
 
-type FormState = Record<string, string> & { interests?: never };
+interface FormState {
+  set_year?: string;
+  country?: string;
+  first_name?: string;
+  middle_name?: string;
+  last_name?: string;
+  preferred_name?: string;
+  gender?: string;
+  date_of_birth?: string;
+  phone?: string;
+  whatsapp?: string;
+  address?: string;
+  city?: string;
+  state?: string;
+  house?: string;
+  class_department?: string;
+  year_joined?: string;
+  graduation_year?: string;
+  student_id?: string;
+  school_notes?: string;
+  profession?: string;
+  job_title?: string;
+  organisation?: string;
+  industry?: string;
+  business_name?: string;
+  business_website?: string;
+  linkedin?: string;
+  professional_location?: string;
+  emergency_contact_name?: string;
+  emergency_contact_relationship?: string;
+  emergency_contact_phone?: string;
+  other_interest?: string;
+  account_email?: string;
+  password?: string;
+  confirm_password?: string;
+}
 
 const STEPS = [
   "Personal Information",
@@ -87,7 +122,7 @@ function Field({
 function RegisterPage() {
   const navigate = useNavigate();
   const [step, setStep] = useState(0);
-  const [form, setForm] = useState<FormState>({ set_year: "2009", country: "Nigeria" } as FormState);
+  const [form, setForm] = useState<FormState>({ set_year: "2009", country: "Nigeria" });
   const [interests, setInterests] = useState<string[]>([]);
   const [skills, setSkills] = useState("");
   const [employment, setEmployment] = useState<string>(EMPLOYMENT_TYPES[0]);
@@ -97,8 +132,8 @@ function RegisterPage() {
   const [busy, setBusy] = useState(false);
   const [membershipId, setMembershipId] = useState<string | null>(null);
 
-  const set = (key: string) => (value: string) =>
-    setForm((prev) => ({ ...prev, [key]: value }) as FormState);
+  const set = (key: keyof FormState) => (value: string) =>
+    setForm((prev) => ({ ...prev, [key]: value }));
 
   function next() {
     if (step === 0 && (!form.first_name || !form.last_name)) {
