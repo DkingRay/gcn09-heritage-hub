@@ -39,13 +39,8 @@ function Home() {
     <SiteLayout>
       {/* HERO */}
       <section className="relative isolate overflow-hidden">
-        <img
-          src={heroImage}
-          alt="GCN 09 Set alumni gathered together on the school grounds"
-          width={1920}
-          height={1200}
-          className="absolute inset-0 h-full w-full object-cover"
-        />
+        <HeroSlideshow />
+
         <div className="absolute inset-0 bg-gradient-hero" aria-hidden="true" />
         <div
           className="pointer-events-none absolute -right-32 top-16 h-96 w-96 rounded-full bg-gold/20 blur-3xl float-slow"
