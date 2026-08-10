@@ -239,11 +239,15 @@
   transform: scale(1.06);
   transition: opacity 1.8s ease-in-out;
   will-change: opacity, transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform-origin: center center;
 }
 
 .hero-slide[data-active="true"] {
   opacity: 1;
   animation: gcn-ken-burns 9s ease-out forwards;
+  -webkit-animation: gcn-ken-burns 9s ease-out forwards;
 }
 
 @keyframes gcn-ken-burns {
@@ -254,6 +258,30 @@
     transform: scale(1.16) translate3d(-1.5%, -1.5%, 0);
   }
 }
+
+/* Mobile: keep the same cinematic motion, tuned so the zoom stays visible
+   on narrow, tall viewports without cropping faces out of frame. */
+@media (max-width: 768px) {
+  .hero-slide {
+    transform: scale(1.08);
+    transition: opacity 1.4s ease-in-out;
+  }
+
+  .hero-slide[data-active="true"] {
+    animation: gcn-ken-burns-mobile 9s ease-out forwards;
+    -webkit-animation: gcn-ken-burns-mobile 9s ease-out forwards;
+  }
+}
+
+@keyframes gcn-ken-burns-mobile {
+  from {
+    transform: scale(1.06) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.22) translate3d(-2.5%, -2%, 0);
+  }
+}
+
 
 @media (prefers-reduced-motion: reduce) {
   .hero-slide {
