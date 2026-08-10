@@ -232,3 +232,35 @@
     transform: translateY(-18px) scale(1.03);
   }
 }
+
+/* Cinematic hero slideshow: crossfade + slow Ken Burns zoom */
+.hero-slide {
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 1.8s ease-in-out;
+  will-change: opacity, transform;
+}
+
+.hero-slide[data-active="true"] {
+  opacity: 1;
+  animation: gcn-ken-burns 9s ease-out forwards;
+}
+
+@keyframes gcn-ken-burns {
+  from {
+    transform: scale(1.02) translate3d(0, 0, 0);
+  }
+  to {
+    transform: scale(1.16) translate3d(-1.5%, -1.5%, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-slide {
+    transition: none;
+  }
+  .hero-slide[data-active="true"] {
+    animation: none;
+    transform: none;
+  }
+}
