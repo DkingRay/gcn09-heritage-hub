@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, SiteLayout } from "@/components/site/SiteLayout";
+import pageHeroImage from "@/assets/hero-6.jpg.asset.json";
 
 export const Route = createFileRoute("/terms")({
   head: () => ({
@@ -48,6 +49,8 @@ function Terms() {
   return (
     <SiteLayout>
       <PageHero
+        image={pageHeroImage.url}
+        imageAlt="GCN 09 Set alumni posing outdoors"
         eyebrow="Legal"
         title="Terms of Use"
         body="The basis on which members join and use this platform."

@@ -5,6 +5,7 @@ import { CardSkeletons, EmptyState } from "@/components/site/Cards";
 import { Reveal } from "@/components/site/Reveal";
 import { Button } from "@/components/ui/button";
 import { useSpotlights } from "@/lib/queries";
+import pageHeroImage from "@/assets/hero-4.jpg.asset.json";
 
 export const Route = createFileRoute("/alumni")({
   head: () => ({
@@ -31,6 +32,8 @@ function Alumni() {
   return (
     <SiteLayout>
       <PageHero
+        image={pageHeroImage.url}
+        imageAlt="GCN 09 Set alumni members together"
         eyebrow="Alumni"
         title="The set, in the people who make it."
         body="Our full member directory is private and available only to verified members. Publicly, we celebrate members who have chosen to be featured."

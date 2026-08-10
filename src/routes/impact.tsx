@@ -8,6 +8,7 @@ import { CardSkeletons, EmptyState, ProjectCard } from "@/components/site/Cards"
 import { useProjects } from "@/lib/queries";
 import educationImage from "@/assets/impact-education.jpg";
 import communityImage from "@/assets/impact-community.jpg";
+import pageHeroImage from "@/assets/hero-2.jpg.asset.json";
 
 export const Route = createFileRoute("/impact")({
   head: () => ({
@@ -35,6 +36,8 @@ function Impact() {
   return (
     <SiteLayout>
       <PageHero
+        image={pageHeroImage.url}
+        imageAlt="GCN 09 Set alumni collaborating on community impact work"
         eyebrow="Our Impact"
         title="Impact measured in people, not slogans."
         body="Every initiative we run is documented with its location, beneficiaries and outcome so that members and partners can see exactly what their support achieves."

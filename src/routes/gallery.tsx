@@ -3,6 +3,7 @@ import { PageHero, SiteLayout } from "@/components/site/SiteLayout";
 import { EmptyState } from "@/components/site/Cards";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useGallery } from "@/lib/queries";
+import pageHeroImage from "@/assets/hero-6.jpg.asset.json";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({
@@ -26,6 +27,8 @@ function Gallery() {
   return (
     <SiteLayout>
       <PageHero
+        image={pageHeroImage.url}
+        imageAlt="GCN 09 Set alumni posing outdoors"
         eyebrow="Gallery"
         title="Moments from the set."
         body="Photographs from reunions, outreach days, meetings and project deliveries."
