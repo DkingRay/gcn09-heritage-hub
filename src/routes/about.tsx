@@ -6,6 +6,7 @@ import { SectionHeading } from "@/components/site/SectionHeading";
 import { Reveal } from "@/components/site/Reveal";
 import { CoreValues, FocusAreas, MissionVision } from "@/components/site/Sections";
 import { CREST_URL, ORG } from "@/lib/site";
+import aboutHero from "@/assets/hero-4.jpg.asset.json";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -43,6 +44,8 @@ function About() {
         eyebrow="About Us"
         title="A set that grew up together, now building together."
         body="Government College Nasarawa 2009 Set Alumni is a formally incorporated alumni association governed by an elected executive and guided by a written constitution."
+        image={aboutHero.url}
+        imageAlt="GCN 09 Set alumni gathered together at a members' reunion"
       />
 
       <section className="py-20 sm:py-24">
