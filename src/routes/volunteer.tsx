@@ -9,6 +9,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { supabase } from "@/integrations/supabase/client";
 import { CONTRIBUTION_OPTIONS } from "@/lib/site";
+import pageHeroImage from "@/assets/hero-1.jpg.asset.json";
 
 export const Route = createFileRoute("/volunteer")({
   head: () => ({
@@ -69,6 +70,8 @@ function Volunteer() {
   return (
     <SiteLayout>
       <PageHero
+        image={pageHeroImage.url}
+        imageAlt="GCN 09 Set alumni volunteers at a gathering"
         eyebrow="Volunteer"
         title="Your Time Can Make a Difference"
         body="Impact is not created by money alone. We welcome members who are willing to contribute their skills, knowledge, time, networks and experience to the growth of the GCN 09 Set."

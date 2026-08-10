@@ -4,6 +4,7 @@ import { PageHero, SiteLayout } from "@/components/site/SiteLayout";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { Reveal } from "@/components/site/Reveal";
 import { CREST_URL, ORG } from "@/lib/site";
+import pageHeroImage from "@/assets/hero-3.jpg.asset.json";
 
 export const Route = createFileRoute("/governance")({
   head: () => ({
@@ -56,6 +57,8 @@ function Governance() {
   return (
     <SiteLayout>
       <PageHero
+        image={pageHeroImage.url}
+        imageAlt="GCN 09 Set alumni leadership and members"
         eyebrow="Governance"
         title="Structure, stewardship and accountability."
         body="We are a formally incorporated association with elected leadership, written rules and documented reporting to members."

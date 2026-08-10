@@ -8,6 +8,7 @@ import { Badge } from "@/components/ui/badge";
 import { useEvents } from "@/lib/queries";
 import { useSession } from "@/hooks/useSession";
 import { supabase } from "@/integrations/supabase/client";
+import pageHeroImage from "@/assets/hero-1.jpg.asset.json";
 
 export const Route = createFileRoute("/events")({
   head: () => ({
@@ -54,6 +55,8 @@ function Events() {
   return (
     <SiteLayout>
       <PageHero
+        image={pageHeroImage.url}
+        imageAlt="GCN 09 Set alumni gathered at a reunion event"
         eyebrow="Events"
         title="Where the set meets, decides and gives back."
         body="Registration for members opens for each published event. Sign in to reserve your place."

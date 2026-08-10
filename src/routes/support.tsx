@@ -10,6 +10,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { supabase } from "@/integrations/supabase/client";
 import { SUPPORT_CAUSES } from "@/lib/site";
+import pageHeroImage from "@/assets/hero-2.jpg.asset.json";
 
 export const Route = createFileRoute("/support")({
   head: () => ({
@@ -73,6 +74,8 @@ function Support() {
   return (
     <SiteLayout>
       <PageHero
+        image={pageHeroImage.url}
+        imageAlt="GCN 09 Set alumni celebrating together"
         eyebrow="Support"
         title="Give. Support. Transform."
         body="Your support funds education, welfare and community development delivered by members of the 2009 Set. Online card payment is being set up — pledges recorded here are followed up by our finance team."
