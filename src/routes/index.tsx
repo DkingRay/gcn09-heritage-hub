@@ -8,7 +8,7 @@ import { CoreValues, FocusAreas, ImpactStats, MissionVision } from "@/components
 import { CardSkeletons, EmptyState, NewsCard, ProjectCard } from "@/components/site/Cards";
 import { useEvents, useNews, useProjects } from "@/lib/queries";
 import { CREST_URL, ORG } from "@/lib/site";
-import heroImage from "@/assets/hero-alumni.jpg";
+import { HeroSlideshow } from "@/components/site/HeroSlideshow";
 
 export const Route = createFileRoute("/")({
   head: () => ({
