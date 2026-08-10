@@ -17,15 +17,28 @@ export function PageHero({
   eyebrow,
   title,
   body,
+  image,
+  imageAlt,
   children,
 }: {
   eyebrow: string;
   title: string;
   body?: string | undefined;
+  image?: string | undefined;
+  imageAlt?: string | undefined;
   children?: ReactNode | undefined;
 }) {
   return (
-    <section className="relative overflow-hidden bg-gradient-brand">
+    <section className="relative isolate overflow-hidden bg-brand-deep">
+      {image ? (
+        <img
+          src={image}
+          alt={imageAlt ?? ""}
+          loading="eager"
+          className="absolute inset-0 h-full w-full object-cover object-center"
+        />
+      ) : null}
+      <div className="absolute inset-0 bg-gradient-hero" aria-hidden="true" />
       <div
         className="pointer-events-none absolute -right-24 top-0 h-80 w-80 rounded-full bg-gold/15 blur-3xl float-slow"
         aria-hidden="true"
