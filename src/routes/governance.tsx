@@ -3,7 +3,9 @@ import { FileText, Gavel, ScrollText, ShieldCheck, Users2 } from "lucide-react";
 import { PageHero, SiteLayout } from "@/components/site/SiteLayout";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { Reveal } from "@/components/site/Reveal";
+import { Executives } from "@/components/site/Executives";
 import { CREST_URL, ORG } from "@/lib/site";
+import { EXECUTIVES } from "@/lib/executives";
 import pageHeroImage from "@/assets/hero-3.jpg.asset.json";
 
 export const Route = createFileRoute("/governance")({
@@ -84,6 +86,8 @@ function Governance() {
           </div>
         </div>
       </section>
+
+      <Executives executives={EXECUTIVES} />
 
       <section className="bg-brand-deep py-20 sm:py-24">
         <div className="mx-auto grid max-w-7xl items-center gap-12 px-4 sm:px-6 lg:grid-cols-[1.2fr_1fr] lg:px-8">

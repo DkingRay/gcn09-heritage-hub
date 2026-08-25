@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AlumniRouteImport } from './routes/alumni'
 import { Route as ContactRouteImport } from './routes/contact'
 import { Route as EventsRouteImport } from './routes/events'
@@ -24,6 +25,7 @@ import { Route as ProjectsRouteImport } from './routes/projects'
 import { Route as SupportRouteImport } from './routes/support'
 import { Route as TermsRouteImport } from './routes/terms'
 import { Route as VolunteerRouteImport } from './routes/volunteer'
+import { Route as MemberDashboardRouteImport } from './routes/member.dashboard'
 import { Route as MembershipRegisterRouteImport } from './routes/membership.register'
 import { Route as NewsSlugRouteImport } from './routes/news.$slug'
 import { Route as ProjectsSlugRouteImport } from './routes/projects.$slug'
@@ -36,6 +38,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdminRoute = AdminRouteImport.update({
+  id: '/admin',
+  path: '/admin',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AlumniRoute = AlumniRouteImport.update({
@@ -103,6 +110,11 @@ const VolunteerRoute = VolunteerRouteImport.update({
   path: '/volunteer',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MemberDashboardRoute = MemberDashboardRouteImport.update({
+  id: '/member/dashboard',
+  path: '/member/dashboard',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const MembershipRegisterRoute = MembershipRegisterRouteImport.update({
   id: '/membership/register',
   path: '/membership/register',
@@ -122,6 +134,7 @@ const ProjectsSlugRoute = ProjectsSlugRouteImport.update({
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
   '/alumni': typeof AlumniRoute
   '/contact': typeof ContactRoute
   '/events': typeof EventsRoute
@@ -135,6 +148,7 @@ export interface FileRoutesByFullPath {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/volunteer': typeof VolunteerRoute
+  '/member/dashboard': typeof MemberDashboardRoute
   '/membership/register': typeof MembershipRegisterRoute
   '/news/$slug': typeof NewsSlugRoute
   '/projects/$slug': typeof ProjectsSlugRoute
@@ -142,6 +156,7 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
   '/alumni': typeof AlumniRoute
   '/contact': typeof ContactRoute
   '/events': typeof EventsRoute
@@ -155,6 +170,7 @@ export interface FileRoutesByTo {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/volunteer': typeof VolunteerRoute
+  '/member/dashboard': typeof MemberDashboardRoute
   '/membership/register': typeof MembershipRegisterRoute
   '/news/$slug': typeof NewsSlugRoute
   '/projects/$slug': typeof ProjectsSlugRoute
@@ -163,6 +179,7 @@ export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/admin': typeof AdminRoute
   '/alumni': typeof AlumniRoute
   '/contact': typeof ContactRoute
   '/events': typeof EventsRoute
@@ -176,6 +193,7 @@ export interface FileRoutesById {
   '/support': typeof SupportRoute
   '/terms': typeof TermsRoute
   '/volunteer': typeof VolunteerRoute
+  '/member/dashboard': typeof MemberDashboardRoute
   '/membership/register': typeof MembershipRegisterRoute
   '/news/$slug': typeof NewsSlugRoute
   '/projects/$slug': typeof ProjectsSlugRoute
@@ -185,6 +203,7 @@ export interface FileRouteTypes {
   fullPaths:
     | '/'
     | '/about'
+    | '/admin'
     | '/alumni'
     | '/contact'
     | '/events'
@@ -198,6 +217,7 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/volunteer'
+    | '/member/dashboard'
     | '/membership/register'
     | '/news/$slug'
     | '/projects/$slug'
@@ -205,6 +225,7 @@ export interface FileRouteTypes {
   to:
     | '/'
     | '/about'
+    | '/admin'
     | '/alumni'
     | '/contact'
     | '/events'
@@ -218,6 +239,7 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/volunteer'
+    | '/member/dashboard'
     | '/membership/register'
     | '/news/$slug'
     | '/projects/$slug'
@@ -225,6 +247,7 @@ export interface FileRouteTypes {
     | '__root__'
     | '/'
     | '/about'
+    | '/admin'
     | '/alumni'
     | '/contact'
     | '/events'
@@ -238,6 +261,7 @@ export interface FileRouteTypes {
     | '/support'
     | '/terms'
     | '/volunteer'
+    | '/member/dashboard'
     | '/membership/register'
     | '/news/$slug'
     | '/projects/$slug'
@@ -246,6 +270,7 @@ export interface FileRouteTypes {
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  AdminRoute: typeof AdminRoute
   AlumniRoute: typeof AlumniRoute
   ContactRoute: typeof ContactRoute
   EventsRoute: typeof EventsRoute
@@ -259,6 +284,7 @@ export interface RootRouteChildren {
   SupportRoute: typeof SupportRoute
   TermsRoute: typeof TermsRoute
   VolunteerRoute: typeof VolunteerRoute
+  MemberDashboardRoute: typeof MemberDashboardRoute
   MembershipRegisterRoute: typeof MembershipRegisterRoute
 }
 
@@ -276,6 +302,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/admin': {
+      id: '/admin'
+      path: '/admin'
+      fullPath: '/admin'
+      preLoaderRoute: typeof AdminRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/alumni': {
@@ -369,6 +402,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof VolunteerRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/member/dashboard': {
+      id: '/member/dashboard'
+      path: '/member/dashboard'
+      fullPath: '/member/dashboard'
+      preLoaderRoute: typeof MemberDashboardRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/membership/register': {
       id: '/membership/register'
       path: '/membership/register'
@@ -418,6 +458,7 @@ const ProjectsRouteWithChildren = ProjectsRoute._addFileChildren(
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  AdminRoute: AdminRoute,
   AlumniRoute: AlumniRoute,
   ContactRoute: ContactRoute,
   EventsRoute: EventsRoute,
@@ -431,6 +472,7 @@ const rootRouteChildren: RootRouteChildren = {
   SupportRoute: SupportRoute,
   TermsRoute: TermsRoute,
   VolunteerRoute: VolunteerRoute,
+  MemberDashboardRoute: MemberDashboardRoute,
   MembershipRegisterRoute: MembershipRegisterRoute,
 }
 export const routeTree = rootRouteImport
