@@ -96,6 +96,13 @@ function About() {
 
       <FocusAreas />
 
+      <Executives
+        executives={EXECUTIVES}
+        eyebrow="Executive Committee"
+        title="Meet the Executive Committee"
+        body="Elected officers serving the 2009 Set Alumni. Full governance details, documents and committee information are available on the governance page."
+      />
+
       <section className="py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <SectionHeading
