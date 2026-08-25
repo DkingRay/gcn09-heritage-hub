@@ -5,6 +5,8 @@ import { PageHero, SiteLayout } from "@/components/site/SiteLayout";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { Reveal } from "@/components/site/Reveal";
 import { CoreValues, FocusAreas, MissionVision } from "@/components/site/Sections";
+import { Executives } from "@/components/site/Executives";
+import { EXECUTIVES } from "@/lib/executives";
 import { CREST_URL, ORG } from "@/lib/site";
 import aboutHero from "@/assets/hero-4.jpg.asset.json";
 
