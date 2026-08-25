@@ -3,7 +3,9 @@ import { FileText, Gavel, ScrollText, ShieldCheck, Users2 } from "lucide-react";
 import { PageHero, SiteLayout } from "@/components/site/SiteLayout";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { Reveal } from "@/components/site/Reveal";
+import { Executives } from "@/components/site/Executives";
 import { CREST_URL, ORG } from "@/lib/site";
+import { EXECUTIVES } from "@/lib/executives";
 import pageHeroImage from "@/assets/hero-3.jpg.asset.json";
 
 export const Route = createFileRoute("/governance")({
