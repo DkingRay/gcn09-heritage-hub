@@ -5,6 +5,8 @@ import { PageHero, SiteLayout } from "@/components/site/SiteLayout";
 import { SectionHeading } from "@/components/site/SectionHeading";
 import { Reveal } from "@/components/site/Reveal";
 import { CoreValues, FocusAreas, MissionVision } from "@/components/site/Sections";
+import { Executives } from "@/components/site/Executives";
+import { EXECUTIVES } from "@/lib/executives";
 import { CREST_URL, ORG } from "@/lib/site";
 import aboutHero from "@/assets/hero-4.jpg.asset.json";
 
@@ -93,6 +95,13 @@ function About() {
       </section>
 
       <FocusAreas />
+
+      <Executives
+        executives={EXECUTIVES}
+        eyebrow="Executive Committee"
+        title="Meet the Executive Committee"
+        body="Elected officers serving the 2009 Set Alumni. Full governance details, documents and committee information are available on the governance page."
+      />
 
       <section className="py-20 sm:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
