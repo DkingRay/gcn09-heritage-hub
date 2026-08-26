@@ -49,7 +49,7 @@ export function useAdminUpdate<T extends AdminTable>(table: T, idColumn = "id") 
         .from(table)
         // eslint-disable-next-line @typescript-eslint/no-explicit-any
         .update(values as any)
-        .eq(idColumn, id);
+        .eq(idColumn as never, id);
       if (error) throw error;
     },
     onSuccess: () => {
@@ -82,7 +82,10 @@ export function useAdminDelete<T extends AdminTable>(table: T, idColumn = "id") 
   const qc = useQueryClient();
   return useMutation({
     mutationFn: async (id: string) => {
-      const { error } = await supabase.from(table).delete().eq(idColumn, id);
+      const { error } = await supabase
+        .from(table)
+        .delete()
+        .eq(idColumn as never, id);
       if (error) throw error;
     },
     onSuccess: () => {
