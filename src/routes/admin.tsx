@@ -31,7 +31,7 @@ import {
   type ProjectRow,
   type StatRow,
 } from "@/lib/admin";
-import heroImage from "@/assets/hero-2.jpg";
+import heroImage from "@/assets/hero-2.jpg.asset.json";
 
 export const Route = createFileRoute("/admin")({
   head: () => ({
@@ -108,7 +108,7 @@ function AdminDashboard() {
           eyebrow="Restricted"
           title="Administrator access only"
           body="This control centre is reserved for the GCN 09 Set executive and site administrators."
-          image={heroImage}
+          image={heroImage.url}
           imageAlt="GCN 09 Set alumni gathering"
         />
         <section className="py-16">
@@ -135,7 +135,7 @@ function AdminDashboard() {
         eyebrow="Control centre"
         title="Admin Dashboard"
         body="Approve members, publish events and news, track projects, and manage the association inbox."
-        image={heroImage}
+        image={heroImage.url}
         imageAlt="GCN 09 Set alumni gathering"
       />
       <section className="bg-gradient-surface py-12 sm:py-16">
