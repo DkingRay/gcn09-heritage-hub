@@ -31,7 +31,7 @@ import {
   type ProjectRow,
   type StatRow,
 } from "@/lib/admin";
-import heroImage from "@/assets/hero-2.jpg";
+import heroImage from "@/assets/hero-2.jpg.asset.json";
 
 export const Route = createFileRoute("/admin")({
   head: () => ({
