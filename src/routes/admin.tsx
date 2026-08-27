@@ -119,7 +119,7 @@ function AdminDashboard() {
                 : "Please sign in with an administrator account to continue."}
             </p>
             <Button asChild size="lg" className="mt-6 rounded-full">
-              <Link to={user ? "/member/dashboard" : "/login"}>
+              <Link to={user ? "/member/dashboard" : "/admin-login"}>
                 {user ? "Go to my dashboard" : "Sign in"}
               </Link>
             </Button>
