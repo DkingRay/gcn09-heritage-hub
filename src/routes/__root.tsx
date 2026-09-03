@@ -13,6 +13,7 @@ import appCss from "../styles.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 import { Toaster } from "@/components/ui/sonner";
 import { supabase } from "@/integrations/supabase/client";
+import { CREST_URL } from "@/lib/site";
 
 function NotFoundComponent() {
   return (
@@ -93,7 +94,9 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
           "United by Heritage. Driven by Impact. The alumni association of the 2009 Set of Government College Nasarawa.",
       },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: CREST_URL },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: CREST_URL },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
@@ -103,6 +106,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         rel: "stylesheet",
         href: "https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap",
       },
+      { rel: "icon", href: "/gcn-crest.png", type: "image/png" },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
   }),

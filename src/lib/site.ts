@@ -1,6 +1,6 @@
-import crest from "@/assets/gcn-crest.png.asset.json";
+import crest from "@/assets/gcn-crest.png";
 
-export const CREST_URL = crest.url;
+export const CREST_URL = crest;
 
 export const ORG = {
   name: "Government College Nasarawa 2009 Set Alumni",
