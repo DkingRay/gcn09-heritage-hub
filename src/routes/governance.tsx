@@ -6,7 +6,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { Executives } from "@/components/site/Executives";
 import { CREST_URL, ORG } from "@/lib/site";
 import { EXECUTIVES } from "@/lib/executives";
-import pageHeroImage from "@/assets/WhatsApp Image 2026-09-04 at 8.51.23 PM (1).jpeg";
+import pageHeroImage from "@/assets/page-governance.jpeg";
 
 export const Route = createFileRoute("/governance")({
   head: () => ({

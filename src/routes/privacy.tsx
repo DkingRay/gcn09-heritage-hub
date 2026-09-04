@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, SiteLayout } from "@/components/site/SiteLayout";
 import { ORG } from "@/lib/site";
-import pageHeroImage from "@/assets/WhatsApp Image 2026-09-04 at 8.51.23 PM.jpeg";
+import pageHeroImage from "@/assets/About-hero.jpeg";
 
 export const Route = createFileRoute("/privacy")({
   head: () => ({

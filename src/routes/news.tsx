@@ -5,7 +5,7 @@ import { CardSkeletons, EmptyState, NewsCard } from "@/components/site/Cards";
 import { Button } from "@/components/ui/button";
 import { useNews } from "@/lib/queries";
 import { NEWS_CATEGORIES } from "@/lib/site";
-import pageHeroImage from "@/assets/WhatsApp Image 2026-09-04 at 8.51.21 PM (1).jpeg";
+import pageHeroImage from "@/assets/page-news.jpeg";
 
 export const Route = createFileRoute("/news")({
   head: () => ({

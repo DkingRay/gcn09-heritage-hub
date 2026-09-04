@@ -31,7 +31,7 @@ import {
   type ProjectRow,
   type StatRow,
 } from "@/lib/admin";
-import heroImage from "@/assets/WhatsApp Image 2026-09-04 at 8.51.21 PM (1).jpeg";
+import heroImage from "@/assets/page-news.jpeg";
 
 export const Route = createFileRoute("/admin")({
   head: () => ({

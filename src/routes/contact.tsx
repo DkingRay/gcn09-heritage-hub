@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { supabase } from "@/integrations/supabase/client";
 import { ORG } from "@/lib/site";
-import pageHeroImage from "@/assets/WhatsApp Image 2026-09-04 at 8.51.23 PM.jpeg";
+import pageHeroImage from "@/assets/About-hero.jpeg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({

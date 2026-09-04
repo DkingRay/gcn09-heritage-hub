@@ -3,7 +3,7 @@ import { PageHero, SiteLayout } from "@/components/site/SiteLayout";
 import { EmptyState } from "@/components/site/Cards";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useGallery } from "@/lib/queries";
-import pageHeroImage from "@/assets/WhatsApp Image 2026-09-04 at 8.51.22 PM (3).jpeg";
+import pageHeroImage from "@/assets/page-gallery.jpeg";
 
 export const Route = createFileRoute("/gallery")({
   head: () => ({

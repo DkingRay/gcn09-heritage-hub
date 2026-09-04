@@ -5,7 +5,7 @@ import { CardSkeletons, EmptyState, ProjectCard } from "@/components/site/Cards"
 import { Button } from "@/components/ui/button";
 import { useProjects } from "@/lib/queries";
 import { PROJECT_CATEGORIES, PROJECT_STATUSES } from "@/lib/site";
-import pageHeroImage from "@/assets/WhatsApp Image 2026-09-04 at 8.51.23 PM (1).jpeg";
+import pageHeroImage from "@/assets/page-governance.jpeg";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
