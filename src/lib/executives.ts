@@ -63,16 +63,16 @@ export const EXECUTIVES: Executive[] = [
     image: sundayBaiwa,
   },
   {
-    name: "Ali Idaewor Abdul",
+    name: "Esther Amos Mukanche",
     role: "Welfare I",
     state: "Abuja",
-    image: aliIdaewor,
+    image: estherMukanche,
   },
   {
-    name: "Esther Amos Mukanche",
+    name: "Ali Idaewor Abdul",
     role: "Welfare II",
     state: "Abuja",
-    image: estherMukanche,
+    image: aliIdaewor,
   },
   {
     name: "Akpaka Oluchi",
