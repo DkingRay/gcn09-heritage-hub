@@ -453,11 +453,11 @@ ON CONFLICT (id) DO NOTHING;
 -- Storage policies for member-photos
 CREATE POLICY "Members can upload their own photo"
   ON storage.objects FOR INSERT
-  WITH CHECK (bucket_id = 'member-photos' AND auth.uid()::text = (string_split(name, '/'))[1]);
+  WITH CHECK (bucket_id = 'member-photos' AND auth.uid()::text = split_part(name, '/', 1));
 
 CREATE POLICY "Members can read their own photo"
   ON storage.objects FOR SELECT
-  USING (bucket_id = 'member-photos' AND auth.uid()::text = (string_split(name, '/'))[1]);
+  USING (bucket_id = 'member-photos' AND auth.uid()::text = split_part(name, '/', 1));
 
 CREATE POLICY "Admins can read all member photos"
   ON storage.objects FOR SELECT
