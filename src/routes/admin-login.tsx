@@ -5,7 +5,7 @@ import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { supabase } from "@/integrations/supabase/client";
+import { adminLogin } from "@/lib/admin-auth";
 import { CREST_URL, ORG } from "@/lib/site";
 
 export const Route = createFileRoute("/admin-login")({
@@ -31,23 +31,11 @@ function AdminLogin() {
   async function onSubmit(e: React.FormEvent) {
     e.preventDefault();
     setBusy(true);
-    const { data, error } = await supabase.auth.signInWithPassword({ email, password });
-    if (error) {
-      setBusy(false);
-      toast.error(error.message);
-      return;
-    }
-    const userId = data.user?.id;
-    const { data: roleRow } = await supabase
-      .from("user_roles")
-      .select("role")
-      .eq("user_id", userId!)
-      .eq("role", "admin")
-      .maybeSingle();
+    await new Promise((r) => setTimeout(r, 500));
+    const ok = adminLogin(email, password);
     setBusy(false);
-    if (!roleRow) {
-      await supabase.auth.signOut();
-      toast.error("This account does not have administrator access.");
+    if (!ok) {
+      toast.error("Invalid administrator credentials.");
       return;
     }
     toast.success("Welcome, administrator.");
