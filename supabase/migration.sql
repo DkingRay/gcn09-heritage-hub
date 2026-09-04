@@ -5,8 +5,15 @@
 
 -- 1. ENUMS
 -- ============================================================
-CREATE TYPE IF NOT EXISTS app_role AS ENUM ('admin', 'member');
-CREATE TYPE IF NOT EXISTS membership_status AS ENUM ('pending', 'active', 'suspended', 'inactive');
+DO $$ BEGIN
+  CREATE TYPE app_role AS ENUM ('admin', 'member');
+EXCEPTION WHEN duplicate_object THEN NULL;
+END $$;
+
+DO $$ BEGIN
+  CREATE TYPE membership_status AS ENUM ('pending', 'active', 'suspended', 'inactive');
+EXCEPTION WHEN duplicate_object THEN NULL;
+END $$;
 
 -- 2. TABLES
 -- ============================================================
