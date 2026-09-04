@@ -8,7 +8,7 @@ import { CardSkeletons, EmptyState, ProjectCard } from "@/components/site/Cards"
 import { useProjects } from "@/lib/queries";
 import educationImage from "@/assets/impact-education.jpg";
 import communityImage from "@/assets/impact-community.jpg";
-import pageHeroImage from "@/assets/WhatsApp Image 2026-09-04 at 8.51.22 PM (4).jpeg";
+import pageHeroImage from "@/assets/impact-hero.jpeg";
 
 export const Route = createFileRoute("/impact")({
   head: () => ({
