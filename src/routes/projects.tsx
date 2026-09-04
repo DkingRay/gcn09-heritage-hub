@@ -5,7 +5,7 @@ import { CardSkeletons, EmptyState, ProjectCard } from "@/components/site/Cards"
 import { Button } from "@/components/ui/button";
 import { useProjects } from "@/lib/queries";
 import { PROJECT_CATEGORIES, PROJECT_STATUSES } from "@/lib/site";
-import pageHeroImage from "@/assets/hero-3.jpg.asset.json";
+import pageHeroImage from "@/assets/WhatsApp Image 2026-09-04 at 8.51.23 PM (1).jpeg";
 
 export const Route = createFileRoute("/projects")({
   head: () => ({
@@ -42,7 +42,7 @@ function Projects() {
   return (
     <SiteLayout>
       <PageHero
-        image={pageHeroImage.url}
+        image={pageHeroImage}
         imageAlt="GCN 09 Set alumni at a project site"
         eyebrow="Projects"
         title="Every project carries a name, a place and a result."

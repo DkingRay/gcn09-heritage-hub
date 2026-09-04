@@ -1,7 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { PageHero, SiteLayout } from "@/components/site/SiteLayout";
 import { ORG } from "@/lib/site";
-import pageHeroImage from "@/assets/hero-6.jpg.asset.json";
+import pageHeroImage from "@/assets/WhatsApp Image 2026-09-04 at 8.51.23 PM.jpeg";
 
 export const Route = createFileRoute("/privacy")({
   head: () => ({
@@ -50,7 +50,7 @@ function Privacy() {
   return (
     <SiteLayout>
       <PageHero
-        image={pageHeroImage.url}
+        image={pageHeroImage}
         imageAlt="GCN 09 Set alumni posing outdoors"
         eyebrow="Legal"
         title="Privacy Policy"

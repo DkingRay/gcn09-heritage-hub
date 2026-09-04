@@ -10,7 +10,7 @@ import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
 import { supabase } from "@/integrations/supabase/client";
 import { ORG } from "@/lib/site";
-import pageHeroImage from "@/assets/hero-5.jpg.asset.json";
+import pageHeroImage from "@/assets/WhatsApp Image 2026-09-04 at 8.51.23 PM.jpeg";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -67,7 +67,7 @@ function Contact() {
   return (
     <SiteLayout>
       <PageHero
-        image={pageHeroImage.url}
+        image={pageHeroImage}
         imageAlt="GCN 09 Set alumni class photograph"
         eyebrow="Contact"
         title="Let's talk."

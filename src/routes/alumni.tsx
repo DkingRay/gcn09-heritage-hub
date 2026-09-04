@@ -5,7 +5,7 @@ import { CardSkeletons, EmptyState } from "@/components/site/Cards";
 import { Reveal } from "@/components/site/Reveal";
 import { Button } from "@/components/ui/button";
 import { useSpotlights } from "@/lib/queries";
-import pageHeroImage from "@/assets/hero-4.jpg.asset.json";
+import pageHeroImage from "@/assets/Alumni-hero.jpeg";
 
 export const Route = createFileRoute("/alumni")({
   head: () => ({
@@ -32,7 +32,7 @@ function Alumni() {
   return (
     <SiteLayout>
       <PageHero
-        image={pageHeroImage.url}
+        image={pageHeroImage}
         imageAlt="GCN 09 Set alumni members together"
         eyebrow="Alumni"
         title="The set, in the people who make it."

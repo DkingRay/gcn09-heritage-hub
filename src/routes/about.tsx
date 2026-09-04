@@ -8,7 +8,7 @@ import { CoreValues, FocusAreas, MissionVision } from "@/components/site/Section
 import { Executives } from "@/components/site/Executives";
 import { EXECUTIVES } from "@/lib/executives";
 import { CREST_URL, ORG } from "@/lib/site";
-import aboutHero from "@/assets/hero-4.jpg.asset.json";
+import aboutHero from "@/assets/About-hero.jpeg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -46,7 +46,7 @@ function About() {
         eyebrow="About Us"
         title="A set that grew up together, now building together."
         body="Government College Nasarawa 2009 Set Alumni is a formally incorporated alumni association governed by an elected executive and guided by a written constitution."
-        image={aboutHero.url}
+        image={aboutHero}
         imageAlt="GCN 09 Set alumni gathered together at a members' reunion"
       />
 

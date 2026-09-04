@@ -1,18 +1,18 @@
 import { useEffect, useState } from "react";
-import hero1 from "@/assets/hero-4.jpg.asset.json";
-import hero2 from "@/assets/hero-5.jpg.asset.json";
-import hero3 from "@/assets/hero-2.jpg.asset.json";
-import hero4 from "@/assets/hero-1.jpg.asset.json";
-import hero5 from "@/assets/hero-3.jpg.asset.json";
-import hero6 from "@/assets/hero-6.jpg.asset.json";
+import hero1 from "@/assets/Hero1.jpeg";
+import hero2 from "@/assets/Hero2.jpeg";
+import hero3 from "@/assets/Hero3.jpeg";
+import hero4 from "@/assets/Hero4.jpeg";
+import hero5 from "@/assets/Hero5.jpeg";
+import hero6 from "@/assets/hero-1.jpg";
 
 const SLIDES = [
-  { url: hero1.url, alt: "GCN 09 Set alumni gathered together at a members' reunion" },
-  { url: hero2.url, alt: "Alumni celebrating together at an outdoor set gathering" },
-  { url: hero3.url, alt: "Members of the 2009 Set together at a school-day photograph" },
-  { url: hero4.url, alt: "Students of Government College Nasarawa in school uniform" },
-  { url: hero5.url, alt: "Alumni relaxing together during a set outing" },
-  { url: hero6.url, alt: "Archive photograph of the 2009 Set on the school grounds" },
+  { url: hero1, alt: "GCN 09 Set alumni gathered together at a members' reunion" },
+  { url: hero2, alt: "Alumni celebrating together at an outdoor set gathering" },
+  { url: hero3, alt: "Members of the 2009 Set together at a school-day photograph" },
+  { url: hero4, alt: "Students of Government College Nasarawa in school uniform" },
+  { url: hero5, alt: "Alumni relaxing together during a set outing" },
+  { url: hero6, alt: "Archive photograph of the 2009 Set on the school grounds" },
 ];
 
 const INTERVAL = 6500;

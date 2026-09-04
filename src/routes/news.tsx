@@ -5,7 +5,7 @@ import { CardSkeletons, EmptyState, NewsCard } from "@/components/site/Cards";
 import { Button } from "@/components/ui/button";
 import { useNews } from "@/lib/queries";
 import { NEWS_CATEGORIES } from "@/lib/site";
-import pageHeroImage from "@/assets/hero-5.jpg.asset.json";
+import pageHeroImage from "@/assets/WhatsApp Image 2026-09-04 at 8.51.21 PM (1).jpeg";
 
 export const Route = createFileRoute("/news")({
   head: () => ({
@@ -37,7 +37,7 @@ function News() {
   return (
     <SiteLayout>
       <PageHero
-        image={pageHeroImage.url}
+        image={pageHeroImage}
         imageAlt="GCN 09 Set alumni class photograph"
         eyebrow="News & Stories"
         title="What the set is doing, in our own words."

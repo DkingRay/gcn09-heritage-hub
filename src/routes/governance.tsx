@@ -6,7 +6,7 @@ import { Reveal } from "@/components/site/Reveal";
 import { Executives } from "@/components/site/Executives";
 import { CREST_URL, ORG } from "@/lib/site";
 import { EXECUTIVES } from "@/lib/executives";
-import pageHeroImage from "@/assets/hero-3.jpg.asset.json";
+import pageHeroImage from "@/assets/WhatsApp Image 2026-09-04 at 8.51.23 PM (1).jpeg";
 
 export const Route = createFileRoute("/governance")({
   head: () => ({
@@ -59,7 +59,7 @@ function Governance() {
   return (
     <SiteLayout>
       <PageHero
-        image={pageHeroImage.url}
+        image={pageHeroImage}
         imageAlt="GCN 09 Set alumni leadership and members"
         eyebrow="Governance"
         title="Structure, stewardship and accountability."
